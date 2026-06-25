@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RedBeat – Feel the Music</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon"><i class="fa-solid fa-waveform-lines"></i></span>
+      <span class="brand-name">Red<span class="accent">Beat</span></span>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#featured" class="nav-link">Featured</a></li>
+      <li><a href="#categories" class="nav-link">Categories</a></li>
+      <li><a href="#playlist" class="nav-link">Playlist</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <div class="search-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="searchInput" class="search-input" placeholder="Search songs, artists…" />
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== MOBILE MENU ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" class="mob-link">Home</a>
+    <a href="#featured" class="mob-link">Featured</a>
+    <a href="#categories" class="mob-link">Categories</a>
+    <a href="#playlist" class="mob-link">Playlist</a>
+    <div class="mob-search">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" id="mobileSearch" placeholder="Search…" />
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow"><i class="fa-solid fa-circle-dot pulse-dot"></i> Now Streaming</p>
+      <h1 class="hero-title">Feel Every<br /><span class="gradient-text">Beat.</span></h1>
+      <p class="hero-sub">Immerse yourself in a world of raw sound — curated playlists, premium audio, and an experience built for music lovers.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" id="heroPlayBtn">
+          <i class="fa-solid fa-play"></i> Start Listening
+        </button>
+        <button class="btn-ghost" onclick="document.getElementById('playlist').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-list-music"></i> Browse Playlist
+        </button>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2M+</span><span class="stat-label">Tracks</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">50K+</span><span class="stat-label">Artists</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">HD</span><span class="stat-label">Audio</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="disc-container">
+        <div class="disc" id="heroDisc">
+          <div class="disc-inner">
+            <i class="fa-solid fa-music disc-icon"></i>
+          </div>
+        </div>
+        <div class="sound-rings">
+          <div class="ring r1"></div>
+          <div class="ring r2"></div>
+          <div class="ring r3"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURED SONGS ===== -->
+  <section class="section" id="featured">
+    <div class="section-header">
+      <p class="section-eyebrow">Handpicked for You</p>
+      <h2 class="section-title">Featured <span class="accent">Songs</span></h2>
+    </div>
+    <div class="featured-grid" id="featuredGrid">
+      <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section" id="categories">
+    <div class="section-header">
+      <p class="section-eyebrow">Explore by Mood</p>
+      <h2 class="section-title">Music <span class="accent">Categories</span></h2>
+    </div>
+    <div class="categories-row">
+      <button class="cat-btn active" data-cat="all"><i class="fa-solid fa-globe"></i> All</button>
+      <button class="cat-btn" data-cat="Pop"><i class="fa-solid fa-star"></i> Pop</button>
+      <button class="cat-btn" data-cat="Rock"><i class="fa-solid fa-guitar"></i> Rock</button>
+      <button class="cat-btn" data-cat="Hip-Hop"><i class="fa-solid fa-microphone"></i> Hip-Hop</button>
+      <button class="cat-btn" data-cat="Lo-Fi"><i class="fa-solid fa-moon"></i> Lo-Fi</button>
+      <button class="cat-btn" data-cat="Classical"><i class="fa-solid fa-violin"></i> Classical</button>
+    </div>
+  </section>
+
+  <!-- ===== PLAYLIST ===== -->
+  <section class="section" id="playlist">
+    <div class="section-header">
+      <p class="section-eyebrow">Your Queue</p>
+      <h2 class="section-title">Full <span class="accent">Playlist</span></h2>
+    </div>
+    <div class="playlist-table">
+      <div class="playlist-head">
+        <span class="col-num">#</span>
+        <span class="col-info">Track</span>
+        <span class="col-genre">Genre</span>
+        <span class="col-dur"><i class="fa-regular fa-clock"></i></span>
+      </div>
+      <div class="playlist-body" id="playlistBody">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-icon"><i class="fa-solid fa-waveform-lines"></i></span>
+        <span class="brand-name">Red<span class="accent">Beat</span></span>
+      </div>
+      <p class="footer-copy">© 2025 RedBeat. Crafted with <i class="fa-solid fa-heart accent"></i> for music.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== STICKY PLAYER ===== -->
+  <div class="player" id="player">
+    <!-- Song Info -->
+    <div class="player-info">
+      <div class="player-art" id="playerArt">
+        <i class="fa-solid fa-music"></i>
+      </div>
+      <div class="player-meta">
+        <span class="player-title" id="playerTitle">No track selected</span>
+        <span class="player-artist" id="playerArtist">—</span>
+      </div>
+      <button class="like-btn" id="likeBtn" aria-label="Like"><i class="fa-regular fa-heart"></i></button>
+    </div>
+
+    <!-- Controls -->
+    <div class="player-controls">
+      <div class="ctrl-buttons">
+        <button class="ctrl-btn" id="shuffleBtn" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+        <button class="ctrl-btn" id="prevBtn" title="Previous"><i class="fa-solid fa-backward-step"></i></button>
+        <button class="ctrl-btn play-btn" id="playPauseBtn" title="Play/Pause">
+          <i class="fa-solid fa-play" id="playIcon"></i>
+        </button>
+        <button class="ctrl-btn" id="nextBtn" title="Next"><i class="fa-solid fa-forward-step"></i></button>
+        <button class="ctrl-btn" id="repeatBtn" title="Repeat"><i class="fa-solid fa-repeat"></i></button>
+      </div>
+      <div class="progress-row">
+        <span class="time-cur" id="timeCur">0:00</span>
+        <div class="progress-bar" id="progressBar">
+          <div class="progress-fill" id="progressFill"></div>
+          <div class="progress-thumb" id="progressThumb"></div>
+        </div>
+        <span class="time-tot" id="timeTot">0:00</span>
+      </div>
+    </div>
+
+    <!-- Volume -->
+    <div class="player-right">
+      <button class="ctrl-btn" id="muteBtn" title="Mute"><i class="fa-solid fa-volume-high" id="volIcon"></i></button>
+      <div class="volume-bar" id="volumeBar">
+        <div class="volume-fill" id="volumeFill" style="width:70%"></div>
+        <div class="volume-thumb" id="volumeThumb" style="left:70%"></div>
+      </div>
+      <span class="vol-pct" id="volPct">70</span>
+    </div>
+  </div>
+
+  <!-- Hidden Audio Element -->
+  <audio id="audioEl"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
